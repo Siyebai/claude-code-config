@@ -1,0 +1,7 @@
+# 敏感配置
+settings.local.json
+
+# 临时文件
+last-session.json
+old_hooks_bak/
+.claude/

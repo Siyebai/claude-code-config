@@ -1,11 +1,24 @@
 {
   "mcpServers": {
+    "hotnews": {
+      "command": "uv",
+      "args": ["run", "--directory", "C:/Users/李初尘/mcp-servers/hotnews-mcp", "python", "main.py"],
+      "env": {}
+    },
+    "zhihu-search": {
+      "command": "uv",
+      "args": ["run", "--directory", "C:/Users/李初尘/mcp-servers/zhihu-search-mcp", "zhihu-mcp"],
+      "env": {}
+    },
+    "zhihu-publish": {
+      "command": "uv",
+      "args": ["run", "--directory", "C:/Users/李初尘/mcp-servers/zhihu-publish-mcp", "zhihu-mcp"],
+      "env": {}
+    },
     "ollama": {
-      "command": "ollama-mcp-server",
+      "command": "C:/Users/李初尘/AppData/Roaming/npm/ollama-mcp-server",
       "args": [],
-      "env": {
-        "OLLAMA_HOST": "http://localhost:11434"
-      }
+      "env": {}
     }
   }
 }
