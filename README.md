@@ -19,7 +19,9 @@ claude-code-config/
 │   ├── feedback-output-style.md # 输出风格规则
 │   └── ...                # 其他15个记忆文件
 ├── agents/                # 45个Agent定义(放到 ~/.claude/agents/)
-└── commands/              # 斜杠命令(放到 ~/.claude/commands/)
+├── commands/              # 斜杠命令(放到 ~/.claude/commands/)
+├── MASTER-REFERENCE.md    # 主控参考 — 新环境快速唤醒全部记忆
+└── 13-Codex部署配置教程.md  # Codex Desktop + DeepSeek 新手完整部署教程
 ```
 
 ## 部署方法
