@@ -1,0 +1,62 @@
+{
+  "apiKeyHelper": "echo 'sk-74f8bfe3d57a4fe6a2bd191392dbb52c'",
+  "autoConnectIde": true,
+  "defaultPermissionMode": "bypassPermissions",
+  "effortLevel": "low",
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-74f8bfe3d57a4fe6a2bd191392dbb52c",
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_MODEL": "deepseek-v4-pro",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-flash"
+  },
+  "fastMode": true,
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "bash \"$HOME/.claude/hooks/session-save.sh\"",
+            "shell": "bash",
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Agent",
+      "Task",
+      "AskUserQuestion",
+      "Skill",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "NotebookEdit",
+      "BashOutput",
+      "KillBash",
+      "CronCreate",
+      "CronDelete",
+      "CronList"
+    ],
+    "defaultMode": "bypassPermissions",
+    "deny": []
+  },
+  "prefersReducedMotion": true,
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "cat | jq -r 'def f: if . >= 1e6 then (. / 1e6 * 10 | floor / 10 | tostring) + \"M\" elif . >= 1e3 then (. / 1e3 | floor | tostring) + \"k\" else tostring end; .context_window as $w | ($w.total_input_tokens // 0 | f) + \"/\" + ($w.context_window_size // 200000 | f) as $a | ($w.current_usage // {}) as $u | if $u == {} then $a else $a + \" | \" + (if ($u.cache_read_input_tokens // 0) + ($u.cache_creation_input_tokens // 0) > 0 then ((($u.cache_read_input_tokens // 0) / (($u.cache_read_input_tokens // 0) + ($u.cache_creation_input_tokens // 0)) * 100 | floor | tostring) + \"%\") else \"0%\" end) + \" | $\" + ((($u.input_tokens // 0) / 1e6 * 3 + ($u.output_tokens // 0) / 1e6 * 15 + ($u.cache_creation_input_tokens // 0) / 1e6 * 3 + ($u.cache_read_input_tokens // 0) / 1e6 * 0.3) * 100 | floor / 100 | tostring) end'"
+  },
+  "theme": "light"
+}
